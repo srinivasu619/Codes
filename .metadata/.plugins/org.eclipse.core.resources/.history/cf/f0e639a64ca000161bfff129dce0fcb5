@@ -1,0 +1,13 @@
+package com.example.jdbc;
+
+public class LoginCheck {
+	String username,password;
+	public LoginCheck() {
+		// TODO Auto-generated constructor stub
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

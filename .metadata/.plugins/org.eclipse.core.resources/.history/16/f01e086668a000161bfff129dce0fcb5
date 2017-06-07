@@ -1,0 +1,14 @@
+package com.example.jdbc;
+
+import javax.swing.JPanel;
+
+public class Reg extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Reg() {
+
+	}
+
+}

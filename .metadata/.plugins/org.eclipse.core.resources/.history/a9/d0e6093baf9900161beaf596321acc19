@@ -1,0 +1,20 @@
+package com.example.sort;
+
+public class SelectActivity {
+	public int ActivitySelect(int start[],int end[])
+	{
+		System.out.println("A1");
+		for(int i=1;i<start.length;i++)
+		{
+			if(end[i]<start[i+1])
+			{
+				System.out.println("A"+i+1);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

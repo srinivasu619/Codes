@@ -1,0 +1,123 @@
+package com.example.jdbc;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.UIManager;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.JLabel;
+import java.awt.SystemColor;
+import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+
+public class LoginPage {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JPasswordField passwordField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LoginPage window = new LoginPage();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public LoginPage() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setOpacity(2.0f);
+		frame.setBounds(100, 100, 452, 683);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.DARK_GRAY);
+		panel.setBounds(12, 13, 410, 611);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(81, 273, 250, 50);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnLogin = new JButton("LOGIN");
+		btnLogin.setFont(new Font("Lucida Handwriting", Font.PLAIN, 18));
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnLogin.setBackground(Color.GREEN);
+		btnLogin.setBounds(144, 443, 135, 35);
+		panel.add(btnLogin);
+		
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setForeground(new Color(245, 245, 220));
+		lblUsername.setFont(new Font("Lucida Handwriting", Font.PLAIN, 18));
+		lblUsername.setBounds(82, 244, 125, 16);
+		panel.add(lblUsername);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setForeground(new Color(245, 245, 220));
+		lblPassword.setFont(new Font("Lucida Handwriting", Font.PLAIN, 18));
+		lblPassword.setBounds(81, 336, 105, 16);
+		panel.add(lblPassword);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(81, 365, 250, 50);
+		panel.add(passwordField);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\SRINIVASU\\Desktop\\rsz_computer-1331579_640.png"));
+		label.setBounds(61, 111, 75, 75);
+		panel.add(label);
+		
+		JLabel lblNewLabel = new JLabel("Not a member?Create an account");
+		lblNewLabel.setFont(new Font("Source Sans Pro Light", Font.BOLD, 15));
+		lblNewLabel.setForeground(new Color(245, 245, 220));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(81, 533, 250, 16);
+		panel.add(lblNewLabel);
+		
+		JLabel lblAttendence = new JLabel("ATTENDENCE");
+		lblAttendence.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAttendence.setForeground(new Color(245, 245, 220));
+		lblAttendence.setFont(new Font("Lucida Handwriting", Font.BOLD, 23));
+		lblAttendence.setBounds(144, 124, 181, 27);
+		panel.add(lblAttendence);
+		
+		JLabel lblManager = new JLabel("MANAGER");
+		lblManager.setForeground(new Color(245, 245, 220));
+		lblManager.setHorizontalAlignment(SwingConstants.CENTER);
+		lblManager.setFont(new Font("Lucida Handwriting", Font.BOLD, 23));
+		lblManager.setBounds(144, 151, 173, 27);
+		panel.add(lblManager);
+	}
+}

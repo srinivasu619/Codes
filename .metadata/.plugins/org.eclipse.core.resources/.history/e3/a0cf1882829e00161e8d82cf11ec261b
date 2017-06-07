@@ -1,0 +1,62 @@
+package priorityQueue;
+
+public class PQUse {
+
+	public static void K_Sorted(int[] arr,int k)
+	{
+		PQ<Integer> sorted=new PQ<>();
+		for(int i=0;i<k;i++)
+		{
+			sorted.insertMIN(arr[i], arr[i]);
+		}
+		
+		for(int i=k;i<arr.length;i++)
+		{
+			System.out.print(sorted.removeMIN()+" ");
+			sorted.insertMIN(arr[i], arr[i]);
+		}
+		while(!sorted.isEmpty())
+		{
+			System.out.print(sorted.removeMIN()+" ");
+		}
+
+	}
+	public static void K_smallest(int arr[],int k)
+	{
+		PQ<Integer> heap=new PQ<>();
+		for(int i=0;i<k;i++)
+		{
+			heap.insertMAX(arr[i], arr[i]);
+		}
+		for(int i=k;i<arr.length;i++)
+		{
+			if(arr[i]<heap.max())
+			{
+				heap.removeMAX();
+				heap.insertMAX(arr[i], arr[i]);
+			}
+		}
+		System.out.println(heap.max());
+	}
+	public static void consecutive(int arr[])
+	{
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]={2,0,4,1,3,6};
+		//int arr[]={10,9,8,7,6,5,4,3,2,1};
+		/*PQ<Integer> pq1=new PQ<>();
+		for(int i:arr)
+		{
+			pq1.insertMIN(i, i);
+		}
+		while(!pq1.isEmpty())
+		{
+			System.out.println(pq1.removeMIN());
+		}*/
+		//K_Sorted(arr, 3);
+		K_smallest(arr, 3);
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.example.jdbc;
+
+public class LoginCheck {
+	String username,password;
+	public LoginCheck() {
+		// TODO Auto-generated constructor stub
+	}
+	public LoginCheck(String username,String password) {
+		this.username=username;
+		this.password=password;
+	}
+	public boolean dataConn()
+	{
+		return true;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

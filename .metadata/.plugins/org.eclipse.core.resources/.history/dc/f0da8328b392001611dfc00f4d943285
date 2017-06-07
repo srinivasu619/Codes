@@ -1,0 +1,139 @@
+package trees;
+
+import java.util.Scanner;
+
+import queues.Queue;
+
+public class TreeUse {
+
+	public static TreeNode<Integer> input()
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("ENTER THE ROOT DATA");
+		int rootData=sc.nextInt();
+		TreeNode<Integer> root=new TreeNode<Integer>(rootData);
+		Queue<TreeNode<Integer>> q1=new Queue<>();
+		q1.enque(root);
+		while(!q1.isEmpty())
+		{
+			TreeNode<Integer> current=q1.deque();
+			System.out.println("ENTER THE CURRENT NODE CHILD:");
+			int noofChilds=sc.nextInt();
+			for(int i=0;i<noofChilds;i++)
+			{
+				System.out.println("Enter the data of the "+i+"th child");
+				int currdata=sc.nextInt();
+				TreeNode<Integer> currnode=new TreeNode<Integer>(currdata);
+				current.children.add(currnode);
+				q1.enque(currnode);
+			}
+		}
+		return root;
+	}
+	public static void output(TreeNode<Integer> root)
+	{
+
+		Queue<TreeNode<Integer>> qprint=new Queue<>();
+		qprint.enque(root);
+		while(!qprint.isEmpty())
+		{	
+			TreeNode<Integer> currnode=qprint.deque();
+			String print=currnode.data+":";
+			for(TreeNode<Integer> node:currnode.children)
+			{
+				print+=node.data+",";
+				qprint.enque(node);
+			}
+			System.out.println(print);
+		}
+	}
+	public static int count(TreeNode<Integer> root)
+	{
+		if(root==null)
+		{
+			return 0;
+		}
+		int countOfNode=1;
+		for(TreeNode<Integer> node:root.children)
+		{
+			countOfNode+=count(node);
+		}
+		return countOfNode;
+	}
+	public static int sum (TreeNode<Integer> root)
+	{
+		if(root==null)
+		{
+			return 0;
+		}
+		int sumofNode=root.data;
+		for(TreeNode<Integer> node:root.children)
+		{
+			sumofNode+=sum(node);
+		}
+		return sumofNode;
+	}
+	public static int largestNo(TreeNode<Integer> root)
+	{
+		if(root==null)
+		{
+			return Integer.MIN_VALUE;
+		}
+		int largest=root.data;
+		for(TreeNode<Integer> node:root.children)
+		{
+			int data=largestNo(node);
+			if(largest<data)
+			{
+				largest=data;
+			}
+		}
+		return largest;
+	}
+	public static int height(TreeNode<Integer> root)
+	{
+		if(root==null)
+		{
+			return 0;
+		}
+		int count=1,largestH=Integer.MIN_VALUE;
+		for(TreeNode<Integer> node:root.children)
+		{
+			int c=height(node);
+			if(c>=largestH)
+			{
+				largestH=c;
+			}
+		}
+		return count+largestH;
+	}
+	public static int  largestthanX(TreeNode<Integer> root,int x)
+	{
+		if(root==null)
+		{
+			return 0;
+		}
+		int rootdata=root.data,count=0;
+		for(TreeNode<Integer> node:root.children)
+		{
+			count=largestthanX(node, x);
+		}
+		if(rootdata>x)
+		{
+			System.out.println(rootdata);
+			count++;
+		}
+		return count;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TreeNode<Integer> root=input();
+		//output(root);
+		//System.out.println(count(root));
+		//System.out.println("Sum: "+sum(root));
+		//System.out.println("Largest: "+largestNo(root));
+		//System.out.println(height(root));
+		largestthanX(root, 5);
+	}
+
+}

@@ -1,0 +1,27 @@
+package codingPrac;
+import java.util.Scanner;
+public class Array2d {
+	public static int[][] input()
+	{
+		int rows,columns;
+		System.out.println("ENTER THE ROWS");
+		Scanner sc=new Scanner(System.in);
+		rows=sc.nextInt();
+		System.out.println("ENTER THE COLUMNS");
+		columns=sc.nextInt();
+		int inp[][]=new int[rows][columns];
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<columns;j++)
+			{
+					inp[i][j]=sc.nextInt()
+			}
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

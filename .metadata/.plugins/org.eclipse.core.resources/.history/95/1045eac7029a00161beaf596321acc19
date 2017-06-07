@@ -1,0 +1,18 @@
+package com.example.sort;
+
+import java.io.*;
+
+public class BinarySwitch {
+	public static void decision()
+	{
+		BufferedReader inp = new BufferedReader (new InputStreamReader(System.in));
+		String binary=inp.toString();
+		int binaryArr[]=new int[2];
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

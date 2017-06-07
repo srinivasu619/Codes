@@ -1,0 +1,19 @@
+package problemOftheDay;
+
+import java.util.ArrayList;
+
+public class MaximumSubArr {
+
+	public static void subArr(ArrayList<Integer> arr)
+	{
+		if(arr.get(0)>arr.get(arr.size()-1))
+		{
+			
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package codingPrac;
+
+public class recursion {
+public static int power(int x,int n)
+{
+	if(n==0)
+	{
+		return 1;
+	}
+	return x*power(x,n-1);
+}
+public static String words(int number)
+{
+	String arr[]={"zero ","one ","two ","three ","four ","five ","six ","seven ","eight ","nine "};
+	
+	return  arr[number-1];
+}
+public static void number(int num)
+{	String s="";
+	if(num!=0)
+	{
+		s+=words(num%10);
+		num=num/10;
+		number(num);
+	}
+	
+	
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(power(2,3));
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.example.jdbc;
+
+public class RegisterCheck {
+	String username,password,course,emailId;
+	public RegisterCheck(String username,String password,String course,String emailId) {
+		this.username=username;
+		this.password=password;
+		this.emailId=emailId;
+		this.course=course;
+		
+	}
+}

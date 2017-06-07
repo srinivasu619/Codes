@@ -1,0 +1,193 @@
+package com.example.jdbc;
+
+import javax.swing.JPanel;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.CardLayout;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+
+public class Profile extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public Profile() {
+		setBackground(Color.DARK_GRAY);
+		setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(164, 44, 277, 98);
+		add(panel);
+		panel.setLayout(null);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(12, 13, 56, 16);
+		panel.add(label);
+		
+		JLabel label_1 = new JLabel("");
+		label_1.setBounds(12, 42, 56, 16);
+		panel.add(label_1);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setBounds(12, 69, 56, 16);
+		panel.add(label_2);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(12, 189, 429, 76);
+		add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(12, 13, 56, 16);
+		panel_1.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(12, 42, 56, 16);
+		panel_1.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(117, 26, 56, 16);
+		panel_1.add(lblNewLabel_2);
+		
+		JLabel label_3 = new JLabel("%");
+		label_3.setBounds(184, 26, 56, 16);
+		panel_1.add(label_3);
+		
+		JButton btnOff = new JButton("OFF");
+		btnOff.setBounds(204, 22, 56, 25);
+		panel_1.add(btnOff);
+		
+		JButton btnBunk = new JButton("BUNK");
+		btnBunk.setBounds(269, 22, 63, 25);
+		panel_1.add(btnBunk);
+		
+		JButton btnNewButton = new JButton("ATTEND");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setBounds(340, 23, 75, 25);
+		panel_1.add(btnNewButton);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setLayout(null);
+		panel_2.setBounds(12, 278, 429, 76);
+		add(panel_2);
+		
+		JLabel label_4 = new JLabel("New label");
+		label_4.setBounds(12, 13, 56, 16);
+		panel_2.add(label_4);
+		
+		JLabel label_5 = new JLabel("New label");
+		label_5.setBounds(12, 42, 56, 16);
+		panel_2.add(label_5);
+		
+		JLabel label_6 = new JLabel("New label");
+		label_6.setBounds(117, 26, 56, 16);
+		panel_2.add(label_6);
+		
+		JLabel label_7 = new JLabel("%");
+		label_7.setBounds(184, 26, 56, 16);
+		panel_2.add(label_7);
+		
+		JButton button = new JButton("OFF");
+		button.setBounds(204, 22, 56, 25);
+		panel_2.add(button);
+		
+		JButton button_1 = new JButton("BUNK");
+		button_1.setBounds(269, 22, 63, 25);
+		panel_2.add(button_1);
+		
+		JButton button_2 = new JButton("ATTEND");
+		button_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_2.setBounds(340, 23, 75, 25);
+		panel_2.add(button_2);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setLayout(null);
+		panel_3.setBounds(12, 367, 429, 76);
+		add(panel_3);
+		
+		JLabel label_8 = new JLabel("New label");
+		label_8.setBounds(12, 13, 56, 16);
+		panel_3.add(label_8);
+		
+		JLabel label_9 = new JLabel("New label");
+		label_9.setBounds(12, 42, 56, 16);
+		panel_3.add(label_9);
+		
+		JLabel label_10 = new JLabel("New label");
+		label_10.setBounds(117, 26, 56, 16);
+		panel_3.add(label_10);
+		
+		JLabel label_11 = new JLabel("%");
+		label_11.setBounds(184, 26, 56, 16);
+		panel_3.add(label_11);
+		
+		JButton button_3 = new JButton("OFF");
+		button_3.setBounds(204, 22, 56, 25);
+		panel_3.add(button_3);
+		
+		JButton button_4 = new JButton("BUNK");
+		button_4.setBounds(269, 22, 63, 25);
+		panel_3.add(button_4);
+		
+		JButton button_5 = new JButton("ATTEND");
+		button_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_5.setBounds(340, 23, 75, 25);
+		panel_3.add(button_5);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setLayout(null);
+		panel_4.setBounds(12, 456, 429, 76);
+		add(panel_4);
+		
+		JLabel label_12 = new JLabel("New label");
+		label_12.setBounds(12, 13, 56, 16);
+		panel_4.add(label_12);
+		
+		JLabel label_13 = new JLabel("New label");
+		label_13.setBounds(12, 42, 56, 16);
+		panel_4.add(label_13);
+		
+		JLabel label_14 = new JLabel("New label");
+		label_14.setBounds(117, 26, 56, 16);
+		panel_4.add(label_14);
+		
+		JLabel label_15 = new JLabel("%");
+		label_15.setBounds(184, 26, 56, 16);
+		panel_4.add(label_15);
+		
+		JButton button_6 = new JButton("OFF");
+		button_6.setBounds(204, 22, 56, 25);
+		panel_4.add(button_6);
+		
+		JButton button_7 = new JButton("BUNK");
+		button_7.setBounds(269, 22, 63, 25);
+		panel_4.add(button_7);
+		
+		JButton button_8 = new JButton("ATTEND");
+		button_8.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		button_8.setBounds(340, 23, 75, 25);
+		panel_4.add(button_8);
+		
+		JButton btnNewButton_1 = new JButton("Confirm");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_1.setBounds(174, 556, 97, 25);
+		add(btnNewButton_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setBounds(49, 54, 75, 75);
+		add(lblNewLabel_3);
+
+	}
+
+}

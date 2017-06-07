@@ -1,0 +1,91 @@
+package codingPrac;
+import java.util.Scanner;
+public class Array2d {
+	public static int[][] input()
+	{
+		int rows,columns;
+		System.out.println("ENTER THE ROWS");
+		Scanner sc=new Scanner(System.in);
+		rows=sc.nextInt();
+		System.out.println("ENTER THE COLUMNS");
+		columns=sc.nextInt();
+		int inp[][]=new int[rows][columns];
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<columns;j++)
+			{
+					inp[i][j]=sc.nextInt();
+			}
+		}
+		return inp;
+	}
+public static void print(int arr[][])
+{
+	int rows=arr.length;
+	int columns=arr[0].length;
+	for(int i=0;i<columns;i++)
+	{
+		if(i%2==0)
+		{
+			for(int j=0;j<rows;j++)
+			{
+				System.out.print(arr[j][i]+" ");
+			}
+		}
+		else
+		{
+			for(int j=rows-1;j>=0;j--)
+			{
+				System.out.print(arr[j][i]+" ");
+			}
+		}
+		
+	}
+}
+public static void spiral(int inp[][])
+{
+	int rright=0,ctop=0,rleft=0,cbottom=0,row=inp.length,column=inp[0].length;
+	for(int i=0;i<row;i++)
+	{
+		if(rright%2==0)
+		{
+			for(int j=0;j<column-rright;j++)
+			{
+				System.out.print(inp[i][j]);
+			}
+			rright++;
+		}
+		else
+		{
+			for(int j=column-1-rleft;j>=0;j--)
+			{
+				System.out.print(inp[i][j]);
+			}
+			rleft++;
+		}
+		if(cbottom%2==0)
+		{
+			for(int j=0;j<row-cbottom;j++)
+			{
+				System.out.print(inp[j][i]);
+			}
+			cbottom++;
+		}
+		else
+		{
+			for(int j=row-1-ctop;j>=0;j--)
+			{
+				System.out.print(inp[i][j]);
+			}
+			ctop++;
+		}
+		
+	}
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int inp[][]=input();
+		spiral(inp);
+	}
+
+}

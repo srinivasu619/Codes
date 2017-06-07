@@ -1,0 +1,44 @@
+package com.Assignment;
+
+public class Sl {
+	public static int steps1(int number,int p,int q)
+	{
+		int steps=0;
+		while(number!=0)
+		{
+			int curr1=p,curr2=q,prev1=0,prev2=0;
+			for(int i=0;i<number;i++)
+			{
+				
+				if(curr1>=number)
+				{
+					break;
+				}
+				prev1=curr1;
+				curr1*=p;
+			}
+			for(int i=0;i<number;i++)
+			{
+				if(curr2>=number)
+				{
+					break;
+				}
+				prev2=curr2;
+				curr2*=q;
+			}
+			System.out.println(prev1+"   "+prev2);
+			if(prev1>prev2)
+			{
+				number-=prev1;
+			}
+			else
+				number-=prev2;
+			steps++;
+		}
+		return steps;
+	}
+	public static void main(String a[])
+	{
+		System.out.println(steps1(15, 2, 3));
+	}
+}

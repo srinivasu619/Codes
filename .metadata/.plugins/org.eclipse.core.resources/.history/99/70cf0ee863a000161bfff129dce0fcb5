@@ -1,0 +1,270 @@
+package com.example.jdbc;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.UIManager;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+
+public class LoginPage {
+	private static LoginPage window =null;
+	private JFrame frame;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JPasswordField passwordField_1;
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					window= new LoginPage();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public LoginPage() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setOpacity(1.0f);
+		frame.setBounds(100, 100, 452, 683);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.DARK_GRAY);
+		panel.setBounds(12, 13, 410, 611);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Comic Sans MS", Font.PLAIN, 17));
+		textField.setBounds(81, 273, 250, 50);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		JButton btnLogin = new JButton("LOGIN");
+		btnLogin.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 17));
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String username=textField.getText();
+				char[] pass=passwordField.getPassword();
+				if(username==null||pass.length==0||pass==null)
+				{
+					JOptionPane.showMessageDialog(frame,"Complete the Fields.");
+				}
+				else
+				{
+					LoginCheck loginCheck=new LoginCheck(username,pass);
+					boolean check=loginCheck.dataConn();
+					if(check)
+					{
+						JOptionPane.showMessageDialog(frame,"LOGIN SUCCESSFUL");
+					}
+					else
+					{
+						JOptionPane.showMessageDialog(frame,"Wrong Username or Password");
+					}
+				}
+			}
+		});
+		btnLogin.setBackground(new Color(245, 245, 220));
+		btnLogin.setBounds(144, 443, 135, 35);
+		panel.add(btnLogin);
+		
+		JLabel lblUsername = new JLabel("Username");
+		lblUsername.setForeground(new Color(245, 245, 220));
+		lblUsername.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 17));
+		lblUsername.setBounds(82, 244, 125, 16);
+		panel.add(lblUsername);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setForeground(new Color(245, 245, 220));
+		lblPassword.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 17));
+		lblPassword.setBounds(81, 336, 105, 16);
+		panel.add(lblPassword);
+		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Comic Sans MS", Font.PLAIN, 17));
+		passwordField.setBounds(81, 365, 250, 50);
+		panel.add(passwordField);
+		
+		JLabel label = new JLabel("");
+		label.setIcon(new ImageIcon("C:\\Users\\SRINIVASU\\Desktop\\rsz_computer-1331579_640.png"));
+		label.setBounds(61, 111, 75, 75);
+		panel.add(label);
+		
+		JLabel lblNewLabel = new JLabel("Not a member?Create an account");
+		lblNewLabel.setFont(new Font("Source Sans Pro Light", Font.BOLD, 15));
+		lblNewLabel.setForeground(new Color(245, 245, 220));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(81, 533, 250, 16);
+		panel.add(lblNewLabel);
+		lblNewLabel.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				lblNewLabel.setForeground(new Color(0,0,0));
+				lblNewLabel.setBackground(new Color(245, 245, 220));
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		
+		JLabel lblAttendence = new JLabel("ATTENDENCE");
+		lblAttendence.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAttendence.setForeground(new Color(245, 245, 220));
+		lblAttendence.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 25));
+		lblAttendence.setBounds(144, 124, 181, 27);
+		panel.add(lblAttendence);
+		
+		JLabel lblManager = new JLabel("MANAGER");
+		lblManager.setForeground(new Color(245, 245, 220));
+		lblManager.setHorizontalAlignment(SwingConstants.CENTER);
+		lblManager.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 25));
+		lblManager.setBounds(144, 151, 173, 27);
+		panel.add(lblManager);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBackground(Color.DARK_GRAY);
+		panel_1.setBounds(12, 13, 410, 611);
+		frame.getContentPane().add(panel_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(81, 203, 250, 50);
+		panel_1.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(81, 284, 250, 50);
+		panel_1.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(81, 364, 250, 50);
+		panel_1.add(textField_3);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(81, 444, 250, 50);
+		panel_1.add(passwordField_1);
+		
+		JLabel label_1 = new JLabel("USERNAME");
+		label_1.setForeground(new Color(245, 245, 220));
+		label_1.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 17));
+		label_1.setBounds(81, 180, 116, 16);
+		panel_1.add(label_1);
+		
+		JLabel label_2 = new JLabel("Email-Id");
+		label_2.setForeground(new Color(245, 245, 220));
+		label_2.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 17));
+		label_2.setBounds(81, 258, 99, 16);
+		panel_1.add(label_2);
+		
+		JLabel label_3 = new JLabel("COURSE");
+		label_3.setForeground(new Color(245, 245, 220));
+		label_3.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 17));
+		label_3.setBounds(81, 339, 99, 16);
+		panel_1.add(label_3);
+		
+		JLabel label_4 = new JLabel("PASSWORD");
+		label_4.setForeground(new Color(245, 245, 220));
+		label_4.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 17));
+		label_4.setBounds(81, 421, 99, 16);
+		panel_1.add(label_4);
+		
+		JLabel label_5 = new JLabel("");
+		label_5.setBounds(66, 65, 75, 75);
+		panel_1.add(label_5);
+		
+		JLabel label_6 = new JLabel("ATTENDENCE");
+		label_6.setHorizontalAlignment(SwingConstants.CENTER);
+		label_6.setForeground(new Color(245, 245, 220));
+		label_6.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 25));
+		label_6.setBounds(153, 68, 181, 27);
+		panel_1.add(label_6);
+		
+		JLabel label_7 = new JLabel("MANAGER");
+		label_7.setHorizontalAlignment(SwingConstants.CENTER);
+		label_7.setForeground(new Color(245, 245, 220));
+		label_7.setFont(new Font("Lucida Sans Typewriter", Font.BOLD | Font.ITALIC, 25));
+		label_7.setBounds(153, 93, 173, 27);
+		panel_1.add(label_7);
+		
+		JButton btnRegister = new JButton("REGISTER");
+		btnRegister.setFont(new Font("Lucida Sans Typewriter", Font.BOLD, 17));
+		btnRegister.setBounds(146, 529, 135, 35);
+		panel_1.add(btnRegister);
+		btnRegister.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String username=textField_1.getText();
+				String emailid=textField_2.getText();
+				String course=textField_3.getText();
+				char[] pass=passwordField_1.getPassword();
+				String password=pass.toString();
+				if(username==null||emailid==null||course==null||password==null)
+				{
+					JOptionPane.showMessageDialog(frame, "Complete all Fields");
+				}
+				new RegisterCheck(username, password, course, emailid);
+			}
+		});
+	}
+}

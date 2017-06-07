@@ -1,0 +1,35 @@
+package codingPrac;
+import java.util.Scanner;
+public class Fibonaccimethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int first=0,second=1,third=0,number,flag=0;
+		System.out.println("ENTER THE NUMBER");
+		Scanner sc=new Scanner(System.in);
+		number=sc.nextInt();
+		System.out.println(first);
+		System.out.println(second);
+		third=first+second;
+		while(third<number)
+		{
+			/*if(first==number)
+			{
+				flag=1;
+				break;
+			}*/
+			System.out.println(third);
+			third=first+second;
+			first=second;
+			second=third;
+			System.out.println(third);
+			
+		}
+		/*if(flag==0)
+			System.out.println("NO");
+		else
+			System.out.println("YES");
+		sc.close();*/
+	}
+
+}

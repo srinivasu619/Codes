@@ -1,0 +1,25 @@
+package codingPrac;
+
+import java.util.Scanner;
+
+public class Conversion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int currentFahrenhietValue,minFahrenhietValue,maxFahrenhietValue;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("ENTER THE STARTING VALUE");
+		minFahrenhietValue=sc.nextInt();
+		System.out.println("ENTER THE FINAL VALUE");
+		maxFahrenhietValue=sc.nextInt();
+		currentFahrenhietValue=minFahrenhietValue;
+		while(currentFahrenhietValue<=maxFahrenhietValue)
+		{
+			int celciusValue=(int)((5/9)*(currentFahrenhietValue-32));
+			System.out.println(currentFahrenhietValue+" "+celciusValue);
+			currentFahrenhietValue=currentFahrenhietValue+20;
+		}
+		sc.close();
+		}
+
+}
